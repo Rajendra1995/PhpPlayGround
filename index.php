@@ -8,7 +8,13 @@ $conn = mysqli_connect($mysql_server,$mysql_username,$mysql_password,$db_name);
 if ($conn){
 	echo("Successful");
 }
-$query = "create table admin (varchar(50) name,int(10) age)";
+$query = "CREATE TABLE MyGuests (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+firstname VARCHAR(30) NOT NULL,
+lastname VARCHAR(30) NOT NULL,
+email VARCHAR(50),
+reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+)";
 if ($conn->query($query) === TRUE) {
   echo "Table MyGuests created successfully";
 } else {
