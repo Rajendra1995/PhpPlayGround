@@ -8,7 +8,7 @@ $conn = mysqli_connect($mysql_server,$mysql_username,$mysql_password,$db_name);
 if ($conn){
 	echo("Successful");
 }
-$query = "create table admin (var(50) name,int(10) age)";
+$query = "create table admin (varchar(50) name,int(10) age)";
 if ($conn->query($query) === TRUE) {
   echo "Table MyGuests created successfully";
 } else {
